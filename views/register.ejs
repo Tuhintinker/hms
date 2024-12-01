@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+
+    <!-- Web Fonts -->
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin"
+    />
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- CSS Header and Footer -->
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="assets/plugins/line-icons-pro/styles.css" />
+    <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css" />
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css" />
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="assets/css/custom.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Header v1 -->
+      <div class="header-v1">
+        <!-- Topbar -->
+        <div class="topbar-v1">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <ul class="list-inline top-v1-contacts">
+                  <li>
+                    <i class="fa fa-envelope"></i> Email: <%= hospitalEmail %>
+                  </li>
+                  <li>
+                    <i class="fa fa-phone"></i> Contact no: <%= hospitalPhone %>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navbar -->
+        <div class="navbar mega-menu" role="navigation">
+          <div class="container">
+            <div class="res-container">
+              <button
+                class="navbar-toggle"
+                type="button"
+                data-toggle="collapse"
+                data-target=".navbar-responsive-collapse"
+              >
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <div class="navbar-brand">
+                <a href="index.html">
+                  <img src="assets/img/logo/unity_white.jpg" alt="Logo" />
+                </a>
+              </div>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-responsive-collapse">
+              <div class="res-container">
+                <ul class="nav navbar-nav">
+                  <% navItems.forEach((navItem) => { %>
+                    <li class="mega-menu-fullwidth">
+                      <a href="<%= navItem.url %>"><%= navItem.label %></a>
+                    </li>
+                  <% }) %>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Title -->
+      <div class="text-center" style="margin-top: 50px;">
+        <h2><%= pageTitle %></h2>
+      </div>
+
+      <!-- Content Part -->
+      <div class="container content">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <form
+              class="reg-page"
+              method="POST"
+              action="/register"
+             
+            >
+              <div class="reg-header">
+                <h2>Register a new account</h2>
+                <p>
+                  Already Signed Up? Click
+                  <a href="login" class="color-green">Sign In</a> to login to your
+                  account.
+                </p>
+              </div>
+              <label for="firstname">First Name</label>
+              <input
+                class="form-control"
+                name="firstname"
+                style="margin-bottom: 20px;"
+                required
+              />
+
+              <label>Last Name</label>
+              <input
+                class="form-control"
+                name="lastname"
+                style="margin-bottom: 20px;"
+                required
+              />
+
+              <label>Email Address <span class="color-red">*</span></label>
+              <input
+                class="form-control"
+                name="email"
+                type="email"
+                style="margin-bottom: 20px;"
+                required
+              />
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <label>Password <span class="color-red">*</span></label>
+                  <input
+                  type="password"
+                    class="form-control"
+                    name="password"
+                    style="margin-bottom: 20px;"
+                    required
+                  />
+                </div>
+                <div class="col-sm-6">
+                  <label>Confirm Password <span class="color-red">*</span></label>
+                  <input
+                  name="confirmPassword"
+                  type="password"
+                    class="form-control"
+                    style="margin-bottom: 20px;"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="alert alert-success successBox">
+                <button class="close" type="button" onclick="showMsg(1);">×</button>
+                <strong style="font-size: 16px;">Congratulations!</strong>
+                <span class="alert-link">You Have Successfully Registered.</span>
+              </div>
+
+              <hr />
+
+              <div class="row">
+                <div class="col-lg-6 checkbox">
+                  <label>
+                    <input type="checkbox" required /> I read
+                    <a href="#" class="color-green">Terms and Conditions</a>
+                  </label>
+                </div>
+                <div class="col-lg-6 text-right">
+                  <button class="btn-u" type="submit">Register</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer-v1">
+        <div class="footer">
+          <div class="container">
+            <div class="row">
+              <!-- About -->
+              <div class="col-md-3" style="margin-bottom: 40px;">
+                <a href="index">
+                  <img
+                    id="logo-footer"
+                    class="footer-logo"
+                    src="assets/img/logo/unity_white.jpg"
+                    alt=""
+                  />
+                </a>
+                <p><%= footerDescription %></p>
+              </div>
+
+              <!-- Latest -->
+              <div class="col-md-3" style="margin-bottom: 40px;">
+                <div class="posts">
+                  <div class="headline">
+                    <h2>Latest Posts</h2>
+                  </div>
+                  <ul class="list-unstyled latest-list">
+                    <% latestPosts.forEach((post) => { %>
+                      <li>
+                        <a href="<%= post.url %>"><%= post.title %></a>
+                        <small><%= post.date %></small>
+                      </li>
+                    <% }) %>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Useful Links -->
+              <div class="col-md-3" style="margin-bottom: 40px;">
+                <div class="headline">
+                  <h2>Useful Links</h2>
+                </div>
+                <ul class="list-unstyled link-list">
+                  <% usefulLinks.forEach((link) => { %>
+                    <li>
+                      <a href="<%= link.url %>"><%= link.label %></a>
+                      <i class="fa fa-angle-right"></i>
+                    </li>
+                  <% }) %>
+                </ul>
+              </div>
+
+              <!-- Address -->
+              <div class="col-md-3 map-img" style="margin-bottom: 40px;">
+                <div class="headline">
+                  <h2>Contact Us</h2>
+                </div>
+                <address>
+                  <%= address %>
+                </address>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/plugins/jquery/jquery.min.js"></script>
+    <script>
+      function showMsg(flag) {
+        if (flag === 0) {
+          $(".successBox").css("display", "block");
+        } else {
+          $(".successBox").css("display", "none");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html> 
+<head>
+	<title><%= pageTitle || 'Unity Hospital | Blog' %></title>
+
+	<!-- Web Fonts -->
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin">
+
+	<!-- CSS Global Compulsory -->
+	<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<!-- CSS Header and Footer -->
+	<link rel="stylesheet" href="assets/css/header.css">
+	<link rel="stylesheet" href="assets/css/footer.css">
+
+	<!-- CSS Implementing Plugins -->
+	<link rel="stylesheet" href="assets/plugins/line-icons-pro/styles.css">
+	<link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+	<link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+	 
+	 <!-- CSS Page Style -->
+  	<link rel="stylesheet" href="assets/css/blog_timeline.css">
+
+	<!-- CSS Customization -->
+	<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+</head>
+<body>
+	<div class="wrapper">
+		<!--=== Header v1 ===-->
+	<div class="header-v1">
+		<!-- Topbar -->
+		<div class="topbar-v1">
+		<div class="container">
+		<div class="row">
+		<div class="col-md-6">
+			<ul class="list-inline top-v1-contacts">
+				<li>
+				<i class="fa fa-envelope"></i> Email: <%= contactEmail || 'unityhospital@gmail.com' %>
+				</li>
+				<li>
+				<i class="fa fa-phone"></i> Contact no : <%= contactNumber || '88666 00555' %>
+				</li>
+			</ul>
+		</div>
+		</div>
+		</div>
+		</div>
+
+	<!-- End Topbar -->
+
+		<!-- Navbar -->
+		<div class="navbar mega-menu" role="navigation">
+		<div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="res-container">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+
+		<div class="navbar-brand">
+			<a href="index.html">
+			<img src="assets/img/logo/unity_white.jpg" alt="Logo">
+			</a>
+		</div>
+		</div><!--/end responsive container-->
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse navbar-responsive-collapse">
+		<div class="res-container">
+			<ul class="nav navbar-nav">
+				<!-- Home -->
+				<li class="mega-menu-fullwidth">
+				<a href="<%= homeLink || 'index.html' %>">
+				HOME
+				</a>
+				</li>
+
+				<!-- About Us -->
+				<li class="mega-menu-fullwidth">
+				<a href="<%= aboutLink || 'about.html' %>">
+				ABOUT US
+				</a>	
+				</li>
+
+				<!-- Doctors -->
+				<li class="mega-menu-fullwidth">
+				<a href="<%= doctorsLink || 'doctors.html' %>">
+				DOCTORS
+				</a>
+				</li>
+
+				<!-- Gallery -->
+				<li class="mega-menu-fullwidth">
+				<a href="<%= galleryLink || 'gallery.html' %>">
+				GALLERY
+				</a>
+				</li>
+
+				<!-- Blog -->
+				<li class="mega-menu-fullwidth">
+				<a href="<%= blogLink || 'blog.html' %>">
+				BLOGS
+				</a>	
+				</li>
+
+				<!-- Contact Us -->
+				<li class="mega-menu-fullwidth">
+				<a href="<%= contactLink || 'contact.html' %>">
+				CONTACT US
+				</a>	
+				</li>
+
+				<!-- Registration -->
+				<li class="mega-menu-fullwidth">
+				<a href="<%= registrationLink || 'registration.html' %>">
+				REGISTRATION
+				</a>	
+				</li>
+
+				<!-- login -->
+				<li class="mega-menu-fullwidth">
+				<a href="<%= loginLink || 'login.html' %>">
+				LOGIN
+				</a>	
+				</li>
+
+				<!-- Appointment -->
+				<li class="mega-menu-fullwidth">
+				<a href="<%= appointmentLink || 'appointment.html' %>">
+					BOOK APPOINTMENT
+				</a>
+				</li>
+			</ul>
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+		<!-- End Navbar -->
+
+		<!-- Image title -->
+		<div style="text-align: center; margin-top: 50px; margin-bottom: 40px;">
+			<h2>BLOGS</h2>
+		</div>
+	<!-- End title -->
+
+		<!--=== Content Part ===-->
+		<!-- BLOG 1 -->
+    <div class="container content">
+      <ul class="timeline-v1">
+        <li>
+          <div class="timeline-badge primary"><i class="glyphicon glyphicon-record"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <img class="img-responsive" src="<%= blogs.image || 'assets/img/blogs/1.jpg' %>" alt=""/>
+            </div>
+            <div class="timeline-body text-justify">
+              <h2 class="font-light"><a href="#">How to maintain bone and joint health during winters?</a></h2>
+              <p>It is usually due to restricted absorption of Vitamin D (sunlight) in your body during winter or due to decreased blood flow to bones to increase body temperature or due to restricted mobility to conserve energy which allows accumulation of inflammatory markers or toxins in joints. This leads to stiffness and pain in joints. Ignoring problems related to bones and joints which can lead to further deterioration.</p>
+              <p>These are few tips to keep your joints and muscles healthy during this winter :- </p>
+              <p>1) A balanced diet is key to overall healthy living. Eat a diet which comprises of fruits, vegetables, cereals, dairy products and pulses.<br/>
+			2) Eat foods rich in Vitamin K, D and C.<br/>
+			3) Physical activity is also important. Exercising strengthens the muscles and maintains weight. <br/>
+			4) Do not over eat and reduce weight.
+			</p>
+            </div>
+            <div class="timeline-footer">
+              <ul class="list-inline news-v1-info">
+				<li><span style="margin-left: 120px;">By</span> <a href="#">Dr. Ramneek Mahajan</a></li>
+				<li>|</li>
+				<li><i class="fa fa-clock-o"></i> December 31, 2020</li>
+               </ul>
+            </div>
+          </div>
+        </li>
+        <!-- end of blog 1 -->
+
+        <!-- Blog 2 -->
+        <li class="timeline-inverted">
+          <div class="timeline-badge primary"><i class="glyphicon glyphicon-record invert"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <img class="img-responsive" src="<%= blogs.image || 'assets/img/blogs/2.jpg' %>" alt=""/>
+            </div>
+            <div class="timeline-body text-justify">
+              <h2 class="font-light"><a href="#">Robot Assisted Kidney Transplant in France</a></h2>
+              <p>First robot assisted kidney transplant (RAKT) was performed in France in 2002. Since then, it is gradually gaining foothold in transplant arena. Majority of work is being done in India, Europe and few centres in USA. World wide experience has established its functional outcomes comparable to open transplant. The patient has got multiple benefits :- </p>
+
+   		<p> 1) Lesser pain – early mobility, early recovery </p> <br/>
+    	<p>	2) Less chance of wound infection – no adverse effect on graft  function </p> <br/>
+    	<p> 3) Less blood loss, Minimal scars, improved cosmetic effects </p><br/>
+        <p> Max Super Specialty Hospital, Saket, New Delhi is amongst the few centres across the world routinely doing RAKT.</p>
+          </div>
+            <div class="timeline-footer">
+              <ul class="list-unstyled list-inline blog-info">
+                <li><span style="margin-left: 120px;">By</span> <a href="#">Dr. Anant Kumar</a></li>
+				<li>|</li>
+				<li><i class="fa fa-clock-o"></i> January 30, 2021</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <!-- end of blog 2 -->
+		</ul>
+    </div>
+	<!-- End Content Part -->
+
+		<!-- Footer -->
+		<footer>
+			<div class="footer-v1">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3">
+							<h2>About Unity Hospital</h2>
+							<p>We are the world leaders in patient care. We provide quality healthcare with specialized facilities at affordable prices.</p>
+						</div>
+						<div class="col-md-3">
+							<h2>Contact Us</h2>
+							<p>Address: XYZ, Main Road, New Delhi, India</p>
+							<p>Phone: +91 88666 00555</p>
+							<p>Email: unityhospital@gmail.com</p>
+						</div>
+						<div class="col-md-3">
+							<h2>Follow Us</h2>
+							<ul class="social-icons">
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

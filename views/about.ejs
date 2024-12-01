@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title || "Unity Hospital | About Us" %></title>
+    
+    <!-- Web Fonts -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin">
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <!-- CSS Header and Footer -->
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/footer.css">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="/assets/plugins/line-icons-pro/styles.css">
+    <link rel="stylesheet" href="/assets/plugins/line-icons/line-icons.css">
+    <link rel="stylesheet" href="/assets/plugins/font-awesome/css/font-awesome.min.css">
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="/assets/css/custom.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Header -->
+        <div class="header-v1">
+            <div class="topbar-v1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-inline top-v1-contacts">
+                                <li>
+                                    <i class="fa fa-envelope"></i> Email: <%= email || "unityhospital@gmail.com" %>
+                                </li>
+                                <li>
+                                    <i class="fa fa-phone"></i> Contact no: <%= contact || "88666 00555" %>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navbar -->
+            <div class="navbar mega-menu" role="navigation">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a href="/">
+                            <img src="/assets/img/logo/logo23.png" alt="Logo" />
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="/">HOME</a></li>
+                            <li><a href="/about">ABOUT US</a></li>
+                            <li><a href="/doctors">DOCTORS</a></li>
+                            <li><a href="/gallery">GALLERY</a></li>
+                            <li><a href="/blog">BLOGS</a></li>
+                            <li><a href="/contact">CONTACT US</a></li>
+                            <li><a href="/registration">REGISTRATION</a></li>
+                            <li><a href="/login">LOGIN</a></li>
+                            <li><a href="/appointment">BOOK APPOINTMENT</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- About Content -->
+        <div class="container content-sm" style="margin-top: -25px;">
+            <div class="headline-center" style="margin-bottom: 60px;">
+                <h2>ABOUT <span style="color: #72c02c;">UNITY</span></h2>
+            </div>
+        </div>
+
+        <div class="container content" style="margin-top: -90px">
+            <div class="row" style="margin-bottom: 40px;">
+                <div class="col-md-6" style="margin-bottom: 40px;">
+                    <p>
+                        <span style="color: #72c02c;">UNITY</span> Hospital is a multi/super speciality hospital...
+                    </p>
+                    <ul class="list-unstyled">
+                        <% services.forEach(service => { %>
+                            <li><i class="fa fa-check color-green"></i> <%= service %></li>
+                        <% }); %>
+                    </ul>
+                    <blockquote>
+                        <p>As a leading health organization...</p>
+                        <small>CEO <%= ceoName || "Harshil Patel" %></small>
+                    </blockquote>
+                </div>
+                <div class="col-md-6" style="margin-bottom: 40px;">
+                    <div class="responsive-video">
+                        <iframe src="<%= videoURL || 'https://player.vimeo.com/video/33787650' %>" allowFullScreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-v1">
+            <div class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <a href="/"><img id="logo-footer" class="footer-logo" src="/assets/img/logo/unity_white.jpg" alt="" /></a>
+                            <p>At Unity Hospital...</p>
+                        </div>
+                        <div class="col-md-3">
+                            <h2>Latest Posts</h2>
+                            <ul class="list-unstyled latest-list">
+                                <% latestPosts.forEach(post => { %>
+                                    <li>
+                                        <a href="<%= post.link %>"><%= post.title %></a>
+                                        <small><%= post.date %></small>
+                                    </li>
+                                <% }); %>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <h2>Useful Links</h2>
+                            <ul class="list-unstyled link-list">
+                                <li><a href="/about">About us</a></li>
+                                <li><a href="/contact">Contact us</a></li>
+                                <li><a href="/appointment">Book Appointment</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <h2>Contact Us</h2>
+                            <address>
+                                Unity Hospital <br />
+                                Ahmedabad, IN <br />
+                                Phone: 886 666 00555 <br />
+                                Email: unityhospital@gmail.com
+                            </address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

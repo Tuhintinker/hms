@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Unity Hospital | Login</title>
+
+    <!-- Web Fonts -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin">
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- CSS Header and Footer -->
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="assets/plugins/line-icons-pro/styles.css">
+    <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+  </head>
+  
+  <body>
+    <div class="wrapper">
+      <!-- Header v1 -->
+      <div class="header-v1">
+        <!-- Topbar -->
+        <div class="topbar-v1">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <ul class="list-inline top-v1-contacts">
+                  <li>
+                    <i class="fa fa-envelope"></i>
+                    | Email: unityhospital@gmail.com
+                  </li>
+                  <li>
+                    <i class="fa fa-phone"></i>
+                    | Contact no : 88666 00555
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navbar -->
+        <div class="navbar mega-menu" role="navigation">
+          <div class="container">
+            <div class="res-container">
+              <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <div class="navbar-brand">
+                <a href="index.html">
+                  <img src="assets/img/logo/unity_white.jpg" alt="Logo">
+                </a>
+              </div>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-responsive-collapse">
+              <div class="res-container">
+                <ul class="nav navbar-nav">
+                  <% navbar.forEach(function(navbarItem) { %>
+                    <li class="mega-menu-fullwidth">
+                      <a href="<%= navbarItem.link %>"><%= navbarItem.title %></a>
+                    </li>
+                  <% }); %>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Title -->
+      <div style="text-align: center; margin-top: 50px;">
+        <h2>LOGIN</h2>
+      </div>
+
+      <!-- Content Part -->
+      <div class="container content">
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+            <form class="reg-page" action="<%= loginAction %>" method="POST">
+              <div class="reg-header">
+                <h2>Login to your account</h2>
+              </div>
+
+              <div class="input-group" style="margin-bottom: 20px;">
+                <span class="input-group-addon">
+                  <i class="fa fa-user"></i>
+                </span>
+                <input class="form-control" type="email" name="userid" placeholder="Email Address" required>
+              </div>
+
+              <div class="input-group" style="margin-bottom: 20px;">
+                <span class="input-group-addon">
+                  <i class="fa fa-lock"></i>
+                </span>
+                <input class="form-control" type="password" name="usrpsw" placeholder="Password" required>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 checkbox">
+                  <label>Stay signed in</label>
+                </div>
+                <div class="col-md-6">
+                  <button class="btn-u pull-right" type="submit">Login</button>
+                </div>
+              </div>
+
+              <hr>
+
+              <h4>Forget your Password?</h4>
+              <p>
+                | no worries, 
+                <a class="color-green" href="<%= forgotPasswordLink %>">click here to reset your password.</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <!-- Footer content can be added here -->
+    </div>
+
+    <!-- Login Javascript -->
+    <script type="text/javascript" src="assets/plugins/jquery/validation.js"></script>
+  </body>
+</html>

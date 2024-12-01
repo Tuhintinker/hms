@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Unity Hospital | Appointment </title>
+
+    <!-- Web Fonts -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin">
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="<%= pathToAssets %>/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<%= pathToAssets %>/css/style.css">
+
+    <!-- CSS Header and Footer -->
+    <link rel="stylesheet" href="<%= pathToAssets %>/css/header.css">
+    <link rel="stylesheet" href="<%= pathToAssets %>/css/footer.css">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="<%= pathToAssets %>/plugins/line-icons-pro/styles.css">
+    <link rel="stylesheet" href="<%= pathToAssets %>/plugins/line-icons/line-icons.css">
+    <link rel="stylesheet" href="<%= pathToAssets %>/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<%= pathToAssets %>/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
+    <link rel="stylesheet" href="<%= pathToAssets %>/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="<%= pathToAssets %>/css/custom.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!--=== Header v1 ===-->
+        <div class="header-v1">
+            <!-- Topbar -->
+            <div class="topbar-v1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-inline top-v1-contacts">
+                                <li>
+                                    <i class="fa fa-envelope"></i> Email: <%= hospitalEmail %>
+                                </li>
+                                <li>
+                                    <i class="fa fa-phone"></i> Contact no : <%= hospitalPhone %>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Topbar -->
+
+            <!-- Navbar -->
+            <div class="navbar mega-menu" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="res-container">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target=".navbar-responsive-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <div class="navbar-brand">
+                            <a href="index.html">
+                                <img src="<%= pathToAssets %>/img/logo/unity_white.jpg" alt="Logo">
+                            </a>
+                        </div>
+                    </div><!--/end responsive container-->
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-responsive-collapse">
+                        <div class="res-container">
+                            <ul class="nav navbar-nav">
+                                <li class="mega-menu-fullwidth"><a href="index.html">HOME</a></li>
+                                <li class="mega-menu-fullwidth"><a href="about.html">ABOUT US</a></li>
+                                <li class="mega-menu-fullwidth"><a href="doctors.html">DOCTORS</a></li>
+                                <li class="mega-menu-fullwidth"><a href="gallery.html">GALLERY</a></li>
+                                <li class="mega-menu-fullwidth"><a href="blog.html">BLOGS</a></li>
+                                <li class="mega-menu-fullwidth"><a href="contact.html">CONTACT US</a></li>
+                                <li class="mega-menu-fullwidth"><a href="registration.html">REGISTRATION</a></li>
+                                <li class="mega-menu-fullwidth"><a href="login.html">LOGIN</a></li>
+                                <li class="mega-menu-fullwidth"><a href="appointment.html">BOOK APPOINTMENT</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Navbar -->
+        </div>
+
+        <!--=== Heading ===-->
+        <div class="container content">
+            <div class="row" style="margin-bottom: 30px;">
+                <div class="col-md-9" style="margin-bottom: 30px;">
+                    <div class="headline">
+                        <h2>Appointment Form</h2>
+                    </div>
+
+                    <!--=== APPOINTMENT FORM ===-->
+                    <form  action="/appointment" method="POST" class="sky-form sky-changes-3">
+                        <fieldset>
+                            <div class="row">
+                                <section class="col col-6">
+                                    <label class="label">Name</label>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-user"></i>
+                                        <input type="text" name="name" id="name" required>
+                                    </label>
+                                </section>
+                                <section class="col col-6">
+                                    <label class="label">E-mail</label>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-envelope-o"></i>
+                                        <input type="email" name="email" id="email" required>
+                                    </label>
+                                </section>
+                            </div>
+                            <section>
+                                <label class="label">Purpose Of Appointment</label>
+                                <label class="input">
+                                    <i class="icon-append fa fa-tag"></i>
+                                    <input type="text" name="subject" required>
+                                </label>
+                            </section>
+                            <section>
+                                <label class="label">Mobile Number</label>
+                                <label class="input">
+                                    <i class="icon-append fa fa-phone"></i>
+                                    <input type="text" name="number" id="number" required>
+                                </label>
+                            </section>
+                            <section>
+                                <label class="select">
+                                    <select name="department" required>
+                                        <option value="" selected disabled>Select Department</option>
+                                        <% departments.forEach(function(dept) { %>
+                                            <option>
+                                                <%= dept %>
+                                            </option>
+                                            <% }); %>
+                                    </select>
+                                    <i></i>
+                                </label>
+                            </section>
+                            <section>
+                                <label class="label">Select Doctor</label>
+                                <label class="select">
+                                    <select name="doctor" required>
+                                        <option value="" selected disabled>Select Doctor</option>
+                                        <option>Dr. Harshil Patel</option>
+                                        <option>Dr. Gagandeep Singh</option>
+                                        <option>Dr. Divyam Gupta</option>
+                                        <option>Dr. Tuhin Ghosh</option>
+                                        <option>Dr. Sahil Achhava</option>
+                                    </select>
+                                    <i></i>
+                                </label>
+                            </section>
+                            <div class="row">
+                                <section class="col col-6">
+                                    <label class="date">Select Date</label>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-calendar"></i>
+                                        <input type="date"  name="appointmentDate"  required>
+                                    </label>
+                                </section>
+                                <section class="col col-6">
+                                    <label class="time">Select Time</label>
+                                    <label class="select">
+                                        <select name="appointmentTime" required>
+                                            <option value="" selected disabled>Select Time</option>
+                                            <% availableTimes.forEach(function(time) { %>
+                                                <option>
+                                                    <%= time %>
+                                                </option>
+                                                <% }); %>
+                                        </select>
+                                        <i></i>
+                                    </label>
+                                </section>
+                            </div>
+                            <div class="alert alert-success successBox">
+                                <button type="button" class="close" onclick="showMsg(1);">×</button>
+                                <strong style="font-size: 16px;">Congratulations!</strong>
+                                <span class="alert-link"> Your Appointment has been booked successfully.</span>
+                            </div>
+                        </fieldset>
+                        <footer>
+                            <button type="submit" class="btn-u">Send message</button>
+                        </footer>
+                    </form>
+
+                </div>
+                <!--/col-md-9-->
+
+                <!-- Side part of appointment -->
+                <div class="col-md-3" style="margin-top: 56px;">
+                    <!-- Address -->
+                    <div class="headline">
+                        <h2>Appointment Notes</h2>
+                    </div>
+                    <p>You can only book your appointment between <strong>8 AM to 10 PM.</strong></p>
+                    <p>In other times, you can call our ambulance, which is available 24/7.</p>
+
+                    <!-- Business Hours -->
+                    <div class="headline" style="margin-top: 20px;">
+                        <h2>Business Hours</h2>
+                    </div>
+                    <ul class="list-unstyled" style="margin-bottom: 30px;">
+                        <li><strong>Monday-Saturday:</strong> 24/7 Available.</li>
+                        <li><strong>Sunday:</strong> 4 AM to 11 PM.</li>
+                    </ul>
+
+                    <!-- Why choose us? -->
+                    <div class="headline">
+                        <h2>Why Choose Us?</h2>
+                    </div>
+                    <p>All healthcare facilities can be accessed here under one roof, making UNITY Hospital a one-point
+                        contact for all your healthcare needs.</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-check color-green"></i> 24/7 Ambulance Support.</li>
+                        <li><i class="fa fa-check color-green"></i> Eminent and Experienced Doctors.</li>
+                        <li><i class="fa fa-check color-green"></i> Multiple Options For Treatment.</li>
+                    </ul>
+                </div>
+                <!--/col-md-3-->
+            </div>
+            <!--/row-->
+        </div>
+        <!--/container-->
+
+        <!--=== Footer ===-->
+        <div id="footer">
+            <!-- Footer -->
+            <div class="copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                2020 &copy; All Rights Reserved.
+                                <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a>
+                            </p>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="col-md-6">
+                            <ul class="footer-socials list-inline">
+                                <% const socialLinks=[ { href: "http://www.facebook.com" , icon: "fa-facebook" ,
+                                    title: "Facebook" }, { href: "http://www.skype.com" , icon: "fa-skype" ,
+                                    title: "Skype" }, { href: "http://www.googleplus.com" , icon: "fa-google-plus" ,
+                                    title: "Google Plus" }, { href: "http://www.linkedin.com" , icon: "fa-linkedin" ,
+                                    title: "LinkedIn" }, { href: "http://www.pinterest.com" , icon: "fa-pinterest" ,
+                                    title: "Pinterest" }, { href: "http://www.twitter.com" , icon: "fa-twitter" ,
+                                    title: "Twitter" } ]; %>
+                                    <% socialLinks.forEach(link=> { %>
+                                        <li>
+                                            <a href="<%= link.href %>" class="tooltips" data-toggle="tooltip"
+                                                data-placement="top" title="<%= link.title %>">
+                                                <i class="fa <%= link.icon %>"></i>
+                                            </a>
+                                        </li>
+                                        <% }) %>
+                            </ul>
+                        </div>
+                        <!-- End Social Links -->
+                    </div>
+                </div>
+            </div>
+            <!-- End Footer -->
+        </div>
+
+        <!--/wrapper-->
+
+        <!-- JS Global Compulsory -->
+        <script src="<%= pathToAssets %>/plugins/jquery/jquery.min.js"></script>
+        <script src="<%= pathToAssets %>/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+        <!-- JS Custom -->
+        <script>
+            function showMsg(option) {
+                document.querySelector('.successBox').style.display = option === 0 ? 'block' : 'none';
+            }
+        </script>
+</body>
+
+</html>
